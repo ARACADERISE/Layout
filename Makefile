@@ -21,7 +21,7 @@ $(FILES):
 	nasm -f bin -o font.bin font.s
 compile:
 	clang -std=c17 -m32 -march=i386 -ffreestanding -fno-builtin -nostdinc -O1 -c Kernel/kernel.c -o bin/kernel.o
-	ld -m elf_i386  -TKernel/kernel.ld bin/kernel.o --oformat binary -o bin/kernel.bin
+	ld -m elf_i386  -Tkernel.ld bin/kernel.o --oformat binary -o bin/kernel.bin
 	rm -rf paging.o
 clean:
 	rm -rf *bin/*
