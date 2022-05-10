@@ -12,7 +12,7 @@ run: $(FILES) compile build
 
 build: $(FILES) compile
 	dd if=/dev/zero of=OS.bin bs=512 count=24
-	cat $(BIN_FILES) test_font.bin bin/kernel.bin > temp.bin
+	cat $(BIN_FILES) font.bin bin/kernel.bin > temp.bin
 	dd if=temp.bin of=OS.bin conv=notrunc
 	rm -rf temp.bin
 
